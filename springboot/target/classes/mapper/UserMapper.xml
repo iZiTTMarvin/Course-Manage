@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.system.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.springboot.system.entity.UserEntity">
+        <id column="user_id" property="id"/>
+        <result column="user_pic" property="pic"/>
+        <result column="user_name" property="name"/>
+        <result column="user_gender" property="gender"/>
+        <result column="user_birth" property="birth"/>
+        <result column="user_acc" property="acc"/>
+        <result column="user_pwd" property="pwd"/>
+        <result column="user_role" property="role"/>
+        <result column="user_start" property="startYear"/>
+        <result column="user_academic" property="academic"/>
+        <result column="user_profess" property="profess"/>
+        <result column="user_team" property="team"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="undock" property="undock"/>
+        <result column="state" property="state"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, user_pic, user_name, user_gender, user_birth, user_acc, user_pwd, user_role, user_start, user_academic, user_profess, user_team, create_by, create_time, update_by, update_time, undock, state, remark
+    </sql>
+
+    <!-- 自定义查询方法，避免使用null值作为查询条件 -->
+    <select id="findUserByCondition" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM course_user
+        <where>
+            <if test="name != null and name != ''">
+                AND user_name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="startYear != null and startYear != ''">
+                AND user_start LIKE CONCAT('%', #{startYear}, '%')
+            </if>
+            <if test="state != null">
+                AND state LIKE CONCAT('%', #{state}, '%')
+            </if>
+            AND undock = 0
+        </where>
+    </select>
+</mapper>
