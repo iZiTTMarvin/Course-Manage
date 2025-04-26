@@ -3,10 +3,9 @@
 ## 介绍
 大学选课系统是一个旨在简化和自动化学生选课流程的软件解决方案。它提供了一个用户友好的界面，允许学生查看课程信息、选择课程、管理他们的课程表以及跟踪选课状态。同时，教师和行政人员也可以通过系统管理课程信息、发布公告和监督选课活动。
 
-项目地址: [https://gitee.com/bestwishes0203/Course-Manage](https://gitee.com/bestwishes0203/Course-Manage)
+本项目作为一个调试项目，我发布在github上，旨在提供给朋友学习。本项目完全开源，欢迎star和fork。
 
 ## 软件截图
-
 
 ![输入图片说明](https://foruda.gitee.com/images/1716718145631087904/1a37531b_10378675.png "屏幕截图")
 ![输入图片说明](https://foruda.gitee.com/images/1716718169562429290/e60e5cae_10378675.png "屏幕截图")
